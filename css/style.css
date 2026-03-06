@@ -59,6 +59,8 @@ body {
   line-height: 1.7;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -238,7 +240,8 @@ a:hover {
   color: var(--gold-light);
   opacity: 1;
   transition: opacity 0.6s ease, transform 0.6s ease;
-  white-space: nowrap;
+  width: 90%;
+  max-width: 500px;
 }
 
 /* Step 1: text vanishes first */
@@ -508,6 +511,7 @@ main#invitation.visible {
    ============================================================ */
 .hero-section {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1488,6 +1492,8 @@ main#invitation.visible {
 /* ============================================================
    RESPONSIVE
    ============================================================ */
+
+/* --- Tablets & small laptops --- */
 @media (max-width: 900px) {
   .event-cards {
     grid-template-columns: 1fr;
@@ -1518,95 +1524,159 @@ main#invitation.visible {
   }
 }
 
+/* --- Mobile phones (landscape & large phones) --- */
 @media (max-width: 680px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 18px;
+  }
+
   .section {
-    padding: 70px 0;
+    padding: 60px 0;
   }
 
-  .curtain-heading {
-    font-size: 2.4rem;
-    margin-bottom: 14px;
-  }
-
-  .curtain-names {
-    font-size: 1.2rem;
-    margin-bottom: 28px;
-  }
-
-  .curtain-pretext {
-    font-size: 0.65rem;
-    letter-spacing: 3px;
-  }
-
+  /* Curtain */
   .curtain-heart-icon {
-    width: 56px;
-    height: 56px;
-    margin-bottom: 24px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
   }
 
   .curtain-heart-icon svg {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .curtain-heading {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+  }
+
+  .curtain-pretext {
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+  }
+
+  .curtain-names {
+    font-size: 1.1rem;
+    margin-bottom: 24px;
   }
 
   #open-invitation-btn {
-    padding: 13px 34px;
-    font-size: 0.7rem;
+    padding: 12px 32px;
+    font-size: 0.68rem;
     letter-spacing: 3px;
   }
 
-  .hero-names {
-    font-size: 2.6rem;
-  }
-
-  .name-ampersand {
-    font-size: 2.2rem;
-    margin: 0 10px;
+  /* Hero */
+  .hero-section {
+    min-height: 100svh;
+    padding: 50px 0;
   }
 
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .hero-names {
+    font-size: 2.4rem;
+  }
+
+  .name-ampersand {
+    font-size: 2rem;
+    margin: 0 8px;
   }
 
   .hero-tagline {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 0 10px;
   }
 
+  .hero-event-type {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    padding: 8px 20px;
+  }
+
+  .ornament-frame {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .corner-ornament {
+    font-size: 1.4rem;
+  }
+
+  .scroll-indicator {
+    bottom: 20px;
+    font-size: 0.6rem;
+  }
+
+  /* Section headers */
   .section-title {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
   }
 
   .section-label {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* Couple cards */
   .couple-cards {
-    gap: 24px;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .couple-card {
-    padding: 30px 24px;
+    padding: 28px 22px;
+    max-width: 100%;
   }
 
   .couple-photo-frame {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 18px;
   }
 
+  .photo-initial {
+    font-size: 2.4rem;
+  }
+
+  .couple-name {
+    font-size: 1.3rem;
+  }
+
+  .couple-connector {
+    padding: 0;
+  }
+
+  .connector-heart {
+    font-size: 1.6rem;
+  }
+
+  /* Save the date */
   .save-date-card {
-    padding: 40px 28px;
+    padding: 36px 22px;
   }
 
   .save-label {
-    font-size: 2rem;
-  }
-
-  .date-day {
-    font-size: 3.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 22px;
   }
 
   .save-date-details {
-    gap: 24px;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .date-separator .sep-line {
@@ -1614,30 +1684,83 @@ main#invitation.visible {
     height: 1px;
   }
 
+  .date-day {
+    font-size: 3.2rem;
+  }
+
   .date-info-block {
     text-align: center;
   }
 
+  .date-weekday {
+    font-size: 1.2rem;
+  }
+
+  /* Event cards */
+  .event-cards {
+    gap: 18px;
+  }
+
+  .event-card {
+    padding: 28px 20px;
+  }
+
+  .event-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .map-btn {
+    padding: 12px 28px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  /* Countdown */
+  .countdown-timer {
+    gap: 10px;
+  }
+
   .timer-block {
-    min-width: 70px;
-    padding: 18px 14px;
+    min-width: 68px;
+    padding: 18px 12px;
+    border-radius: 12px;
   }
 
   .timer-number {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  .timer-label {
+    font-size: 0.6rem;
+    letter-spacing: 2px;
   }
 
   .timer-separator {
-    font-size: 1.6rem;
-    margin-top: 12px;
+    font-size: 1.4rem;
+    margin-top: 10px;
   }
 
+  /* Gallery */
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 
+  .gallery-item-1 {
+    grid-column: span 2;
+  }
+
+  .gallery-item-1 .gallery-placeholder {
+    min-height: 180px;
+  }
+
+  .gallery-placeholder {
+    min-height: 140px;
+  }
+
+  /* RSVP */
   .rsvp-card {
-    padding: 36px 24px;
+    padding: 30px 20px;
   }
 
   .form-row {
@@ -1646,41 +1769,100 @@ main#invitation.visible {
 
   .rsvp-radio-group {
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .rsvp-submit-btn {
+    padding: 13px 32px;
+    font-size: 0.72rem;
+    letter-spacing: 3px;
+    width: 100%;
   }
 
   .contact-cards {
     flex-direction: column;
     align-items: center;
+    gap: 14px;
+  }
+
+  .contact-card {
+    padding: 16px 22px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* Closing */
+  .closing-section {
+    padding: 70px 0;
   }
 
   .closing-quote {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+
+  .closing-title {
+    font-size: 1.6rem;
+  }
+
+  .closing-families {
+    font-size: 1rem;
+  }
+
+  .closing-message p {
+    font-size: 0.95rem;
   }
 
   .closing-names {
-    font-size: 2.2rem;
-  }
-
-  .closing-section {
-    padding: 80px 0;
-  }
-
-  .music-btn {
-    bottom: 16px;
-    right: 16px;
-    padding: 8px 14px;
-    font-size: 0.65rem;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-names {
     font-size: 2rem;
   }
 
-  .name-ampersand {
-    font-size: 1.8rem;
+  /* Music btn */
+  .music-btn {
+    bottom: 14px;
+    right: 14px;
+    padding: 8px 12px;
+    font-size: 0.6rem;
+    gap: 4px;
+  }
+
+  .music-icon {
+    font-size: 0.85rem;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 30px 18px;
+  }
+
+  .footer-hashtag {
+    font-size: 0.75rem;
+  }
+}
+
+/* --- Small phones (iPhone SE, Galaxy S, etc.) --- */
+@media (max-width: 400px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 14px;
+  }
+
+  .section {
+    padding: 50px 0;
+  }
+
+  /* Curtain */
+  .curtain-heart-icon {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 16px;
+  }
+
+  .curtain-heart-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .curtain-heading {
@@ -1688,16 +1870,93 @@ main#invitation.visible {
   }
 
   .curtain-names {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .curtain-pretext {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+  }
+
+  #open-invitation-btn {
+    padding: 11px 26px;
+    font-size: 0.62rem;
+    letter-spacing: 2.5px;
+  }
+
+  /* Hero */
+  .hero-names {
+    font-size: 2rem;
+  }
+
+  .name-ampersand {
+    font-size: 1.6rem;
+    margin: 0 6px;
+  }
+
+  .hero-subtitle {
     font-size: 1rem;
   }
 
+  .hero-tagline {
+    font-size: 0.85rem;
+  }
+
+  .hero-event-type {
+    font-size: 0.62rem;
+    letter-spacing: 3px;
+    padding: 7px 16px;
+  }
+
+  /* Section headers */
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-label {
+    font-size: 1.2rem;
+  }
+
+  /* Couple */
+  .couple-photo-frame {
+    width: 100px;
+    height: 100px;
+  }
+
+  .photo-initial {
+    font-size: 2rem;
+  }
+
+  .couple-name {
+    font-size: 1.15rem;
+  }
+
+  .couple-card {
+    padding: 24px 18px;
+  }
+
+  /* Save date */
+  .save-date-card {
+    padding: 28px 16px;
+  }
+
+  .save-label {
+    font-size: 1.5rem;
+  }
+
+  .date-day {
+    font-size: 2.6rem;
+  }
+
+  /* Countdown */
   .timer-block {
-    min-width: 60px;
-    padding: 14px 10px;
+    min-width: 58px;
+    padding: 14px 8px;
   }
 
   .timer-number {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .timer-separator {
@@ -1705,15 +1964,60 @@ main#invitation.visible {
   }
 
   .countdown-timer {
-    gap: 8px;
+    gap: 6px;
   }
 
+  /* Gallery */
   .gallery-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .gallery-item-1 {
     grid-column: span 1;
+  }
+
+  .gallery-item-1 .gallery-placeholder {
+    min-height: 160px;
+  }
+
+  .gallery-placeholder {
+    min-height: 130px;
+  }
+
+  /* RSVP */
+  .rsvp-card {
+    padding: 24px 16px;
+  }
+
+  /* Closing */
+  .closing-quote {
+    font-size: 1.2rem;
+  }
+
+  .closing-names {
+    font-size: 1.7rem;
+  }
+
+  .closing-section {
+    padding: 50px 0;
+  }
+}
+
+/* --- Very tall phones (notch safe area) --- */
+@supports (padding: max(0px)) {
+  .hero-section {
+    padding-top: max(60px, env(safe-area-inset-top));
+    padding-bottom: max(30px, env(safe-area-inset-bottom));
+  }
+
+  .music-btn {
+    bottom: max(14px, env(safe-area-inset-bottom));
+    right: max(14px, env(safe-area-inset-right));
+  }
+
+  .site-footer {
+    padding-bottom: max(30px, env(safe-area-inset-bottom));
   }
 }
 
