@@ -19,9 +19,9 @@ export default function CurtainOverlay({ onOpen }: Props) {
     <motion.div
       key="curtain-overlay"
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4, delay: 1.2 }}
-      className="fixed inset-0 z-50 overflow-hidden"
-      style={{ background: '#3A0000' }}
+      transition={{ duration: 0.2, delay: 0 }}
+      className="fixed inset-0 z-50 overflow-hidden pointer-events-none"
+      style={{ background: 'transparent' }}
     >
       {/* Left Curtain */}
       <motion.div
