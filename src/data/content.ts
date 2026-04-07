@@ -12,7 +12,7 @@ export const content = {
     en: {
       blessing: 'Sri Ganeshaya Namaha',
       invited: "You're Invited",
-      subtitle: 'To the Auspicious Wedding of',
+      subtitle: 'To Celebrate the Engagement of',
       couple: 'Thraya & Bharath',
       button: 'Open Invitation',
     },

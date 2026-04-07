@@ -7,11 +7,11 @@ interface LangContextType {
   toggle: () => void
 }
 
-const LangContext = createContext<LangContextType>({ lang: 'te', setLang: () => {}, toggle: () => {} })
+const LangContext = createContext<LangContextType>({ lang: 'en', setLang: () => {}, toggle: () => {} })
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(() => {
-    try { return (localStorage.getItem('lang') as Lang) || 'te' } catch { return 'te' }
+    try { return (localStorage.getItem('lang') as Lang) || 'en' } catch { return 'en' }
   })
 
   useEffect(() => {

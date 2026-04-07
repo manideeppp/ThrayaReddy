@@ -23,16 +23,6 @@ export default function CurtainOverlay({ onOpen }: Props) {
       className="fixed inset-0 z-50 overflow-hidden"
       style={{ background: '#3A0000' }}
     >
-      {/* Pelmet / Rod */}
-      <div className="absolute top-0 left-0 right-0 h-7 md:h-10 z-30"
-        style={{ background: 'linear-gradient(180deg, #D4AF37 0%, #B8962E 60%, #8B6914 100%)', boxShadow: '0 4px 20px rgba(0,0,0,0.4)' }}>
-        {/* Toranam scallops */}
-        <div className="absolute -bottom-3 left-0 right-0 h-4" style={{
-          background: 'radial-gradient(ellipse 14px 10px at 14px 0px, transparent 9px, #0B5D3B 9.5px, #0B5D3B 10px, transparent 10.5px) 0 0 / 28px 10px repeat-x',
-          opacity: 0.8,
-        }} />
-      </div>
-
       {/* Left Curtain */}
       <motion.div
         initial={{ x: '0%' }}
@@ -41,18 +31,18 @@ export default function CurtainOverlay({ onOpen }: Props) {
         className="absolute top-0 left-0 h-full z-10"
         style={{ width: '50%' }}
       >
-        <div className="absolute inset-0 silk-texture" style={{
-          background: 'linear-gradient(180deg, #550000 0%, #800000 20%, #6B0000 50%, #800000 80%, #550000 100%)',
-          boxShadow: 'inset -30px 0 50px rgba(0,0,0,0.4)',
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(180deg, #3A0000 0%, #5A1020 20%, #4A0A15 50%, #5A1020 80%, #3A0000 100%)',
+          boxShadow: 'inset -30px 0 60px rgba(0,0,0,0.5)',
         }} />
-        {/* Silk weave pleats */}
-        <div className="absolute inset-0 opacity-30" style={{
-          background: `repeating-linear-gradient(90deg, transparent 0px, transparent 22px, rgba(212,175,55,0.04) 23px, rgba(0,0,0,0.06) 26px, transparent 30px, transparent 60px)`,
+        {/* Subtle vertical pleats */}
+        <div className="absolute inset-0 opacity-20" style={{
+          background: 'repeating-linear-gradient(90deg, transparent 0px, transparent 30px, rgba(255,255,255,0.02) 31px, rgba(0,0,0,0.04) 33px, transparent 35px, transparent 70px)',
         }} />
         {/* Gold zari border on inner edge */}
         <div className="absolute top-0 right-0 w-px h-full" style={{
-          background: 'linear-gradient(180deg, #D4AF37 0%, #F0D060 30%, #D4AF37 50%, #F0D060 70%, #D4AF37 100%)',
-          opacity: 0.5,
+          background: 'linear-gradient(180deg, #D4AF37 0%, #B8962E 50%, #D4AF37 100%)',
+          opacity: 0.6,
         }} />
       </motion.div>
 
@@ -64,18 +54,23 @@ export default function CurtainOverlay({ onOpen }: Props) {
         className="absolute top-0 right-0 h-full z-10"
         style={{ width: '50%' }}
       >
-        <div className="absolute inset-0 silk-texture" style={{
-          background: 'linear-gradient(180deg, #550000 0%, #800000 20%, #6B0000 50%, #800000 80%, #550000 100%)',
-          boxShadow: 'inset 30px 0 50px rgba(0,0,0,0.4)',
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(180deg, #3A0000 0%, #5A1020 20%, #4A0A15 50%, #5A1020 80%, #3A0000 100%)',
+          boxShadow: 'inset 30px 0 60px rgba(0,0,0,0.5)',
         }} />
-        <div className="absolute inset-0 opacity-30" style={{
-          background: `repeating-linear-gradient(90deg, transparent 0px, transparent 22px, rgba(212,175,55,0.04) 23px, rgba(0,0,0,0.06) 26px, transparent 30px, transparent 60px)`,
+        <div className="absolute inset-0 opacity-20" style={{
+          background: 'repeating-linear-gradient(90deg, transparent 0px, transparent 30px, rgba(255,255,255,0.02) 31px, rgba(0,0,0,0.04) 33px, transparent 35px, transparent 70px)',
         }} />
         <div className="absolute top-0 left-0 w-px h-full" style={{
-          background: 'linear-gradient(180deg, #D4AF37 0%, #F0D060 30%, #D4AF37 50%, #F0D060 70%, #D4AF37 100%)',
-          opacity: 0.5,
+          background: 'linear-gradient(180deg, #D4AF37 0%, #B8962E 50%, #D4AF37 100%)',
+          opacity: 0.6,
         }} />
       </motion.div>
+
+      {/* Center vertical gold line (behind content) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full z-[15]" style={{
+        background: 'linear-gradient(180deg, rgba(212,175,55,0.4) 0%, rgba(212,175,55,0.15) 35%, rgba(212,175,55,0.15) 65%, rgba(212,175,55,0.4) 100%)',
+      }} />
 
       {/* Center Content */}
       <motion.div
@@ -86,46 +81,37 @@ export default function CurtainOverlay({ onOpen }: Props) {
         style={{ pointerEvents: opening ? 'none' : 'auto' }}
       >
         <div className="text-center px-6 max-w-md">
-          {/* Diya */}
+          {/* Heart Icon */}
           <motion.div
             animate={{ scale: [1, 1.06, 1] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-5 flex items-center justify-center animate-glow-pulse"
-            style={{ border: '1.5px solid #D4AF37', background: 'rgba(212,175,55,0.06)' }}
+            className="w-16 h-16 md:w-20 md:h-20 rounded-full mx-auto mb-8 flex items-center justify-center"
+            style={{ border: '1px solid rgba(212,175,55,0.5)', background: 'rgba(212,175,55,0.03)' }}
           >
-            <span className="text-3xl md:text-4xl animate-diya-flicker">🪔</span>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+            </svg>
           </motion.div>
 
-          <p className="font-telugu text-sm md:text-base mb-2" style={{ color: '#D4AF37', opacity: 0.85 }}>
-            {t.blessing}
-          </p>
-
-          <h1 className="font-script text-4xl md:text-6xl mb-3 italic" style={{ color: '#F0D060', textShadow: '0 0 40px rgba(212,175,55,0.15)' }}>
+          <h1 className="font-script text-4xl md:text-6xl mb-4 italic" style={{ color: '#D4AF37', textShadow: '0 0 40px rgba(212,175,55,0.1)' }}>
             {t.invited}
           </h1>
 
-          <p className="font-telugu text-xs md:text-sm tracking-widest mb-3 uppercase" style={{ color: '#D4AF37', opacity: 0.8 }}>
+          <p className={`${lang === 'te' ? 'font-telugu text-xs md:text-sm' : 'font-body text-[10px] md:text-xs'} tracking-[0.25em] uppercase mb-4`} style={{ color: 'rgba(212,175,55,0.7)' }}>
             {t.subtitle}
           </p>
 
-          <p className={`${lang === 'te' ? 'font-telugu text-xl md:text-2xl' : 'font-heading text-xl md:text-2xl'} mb-6`} style={{ color: '#F0D060' }}>
+          <p className={`${lang === 'te' ? 'font-telugu text-xl md:text-2xl' : 'font-heading text-xl md:text-2xl'} mb-10`} style={{ color: '#D4AF37' }}>
             {t.couple}
           </p>
 
-          {/* Decorative divider */}
-          <div className="flex items-center justify-center gap-1.5 mb-8">
-            <svg width="20" height="10" viewBox="0 0 20 10"><path d="M0 5 Q5 0 10 5 Q15 10 20 5" fill="none" stroke="#D4AF37" strokeWidth="1" opacity="0.5"/></svg>
-            <span className="text-sm" style={{ color: '#D4AF37' }}>✦</span>
-            <svg width="20" height="10" viewBox="0 0 20 10"><path d="M0 5 Q5 0 10 5 Q15 10 20 5" fill="none" stroke="#D4AF37" strokeWidth="1" opacity="0.5"/></svg>
-          </div>
-
           <motion.button
             onClick={handleClick}
-            whileHover={{ scale: 1.06, boxShadow: '0 0 50px rgba(212,175,55,0.4)' }}
+            whileHover={{ scale: 1.04, boxShadow: '0 0 40px rgba(212,175,55,0.3)' }}
             whileTap={{ scale: 0.96 }}
             disabled={opening}
-            className={`px-10 py-3.5 md:px-14 md:py-4 rounded-full font-semibold text-sm md:text-base tracking-wider transition-all duration-300 cursor-pointer ${lang === 'te' ? 'font-telugu' : 'font-display'}`}
-            style={{ background: 'linear-gradient(135deg, #D4AF37, #F0D060, #D4AF37)', color: '#550000', boxShadow: '0 4px 30px rgba(212,175,55,0.3)' }}
+            className={`px-12 py-3.5 md:px-16 md:py-4 rounded-md font-semibold text-[11px] md:text-xs tracking-[0.2em] uppercase transition-all duration-300 cursor-pointer ${lang === 'te' ? 'font-telugu' : 'font-body'}`}
+            style={{ background: 'linear-gradient(135deg, #C9A84C, #D4AF37, #C9A84C)', color: '#3A0000', boxShadow: '0 4px 25px rgba(212,175,55,0.25)' }}
           >
             {t.button}
           </motion.button>
