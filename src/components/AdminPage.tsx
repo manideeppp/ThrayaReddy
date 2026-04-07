@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-interface WeddingMessage {
-  id: string
-  name: string
-  message: string
-  timestamp: string
-}
+import { supabase, type WeddingMessage } from '../lib/supabase'
 
 const ADMIN_PASSWORD = 'Thraya@123'
 
@@ -15,11 +9,21 @@ export default function AdminPage() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState(false)
   const [messages, setMessages] = useState<WeddingMessage[]>([])
+  const [loading, setLoading] = useState(false)
+
+  const fetchMessages = async () => {
+    setLoading(true)
+    const { data } = await supabase
+      .from('wedding_messages')
+      .select('*')
+      .order('created_at', { ascending: false })
+    setMessages(data || [])
+    setLoading(false)
+  }
 
   useEffect(() => {
     if (authenticated) {
-      const stored = JSON.parse(localStorage.getItem('wedding_messages') || '[]')
-      setMessages(stored.reverse())
+      fetchMessages()
     }
   }, [authenticated])
 
@@ -33,10 +37,14 @@ export default function AdminPage() {
     }
   }
 
-  const handleDelete = (id: string) => {
-    const updated = messages.filter(m => m.id !== id)
-    setMessages(updated)
-    localStorage.setItem('wedding_messages', JSON.stringify([...updated].reverse()))
+  const handleDelete = async (id: string) => {
+    const { error: delError } = await supabase
+      .from('wedding_messages')
+      .delete()
+      .eq('id', id)
+    if (!delError) {
+      setMessages(prev => prev.filter(m => m.id !== id))
+    }
   }
 
   const formatDate = (ts: string) => {
@@ -119,11 +127,14 @@ export default function AdminPage() {
           </div>
           <h1 className="font-display text-3xl md:text-4xl text-white mb-2">Messages for Thraya</h1>
           <p className="text-white/50 font-body text-sm">
-            {messages.length === 0 ? 'No messages yet' : `${messages.length} message${messages.length !== 1 ? 's' : ''} received`}
+            {loading ? 'Loading...' : messages.length === 0 ? 'No messages yet' : `${messages.length} message${messages.length !== 1 ? 's' : ''} received`}
           </p>
-          <div className="flex items-center justify-center gap-2 mt-4">
+          <div className="flex items-center justify-center gap-4 mt-4">
             <div className="h-px w-8" style={{ background: 'linear-gradient(to right, transparent, #D4AF37)' }} />
-            <span className="text-sm" style={{ color: '#F0D060' }}>✦</span>
+            <button onClick={fetchMessages} className="text-xs font-body px-3 py-1 rounded-full transition-colors hover:bg-white/5"
+              style={{ color: '#D4AF37', border: '1px solid rgba(212,175,55,0.3)' }}>
+              ↻ Refresh
+            </button>
             <div className="h-px w-8" style={{ background: 'linear-gradient(to left, transparent, #D4AF37)' }} />
           </div>
         </motion.div>
@@ -153,7 +164,7 @@ export default function AdminPage() {
                       </div>
                       <div>
                         <h3 className="text-white font-display text-base">{msg.name}</h3>
-                        <p className="text-white/30 text-xs font-body">{formatDate(msg.timestamp)}</p>
+                        <p className="text-white/30 text-xs font-body">{formatDate(msg.created_at)}</p>
                       </div>
                     </div>
                     <p className="text-white/80 font-body text-sm md:text-base leading-relaxed pl-12">

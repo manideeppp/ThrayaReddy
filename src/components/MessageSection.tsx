@@ -3,19 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useLang } from '../context/LangContext'
 import { content } from '../data/content'
 import { useInView } from '../hooks/useInView'
-
-interface WeddingMessage {
-  id: string
-  name: string
-  message: string
-  timestamp: string
-}
-
-function saveMessage(msg: WeddingMessage) {
-  const existing = JSON.parse(localStorage.getItem('wedding_messages') || '[]')
-  existing.push(msg)
-  localStorage.setItem('wedding_messages', JSON.stringify(existing))
-}
+import { supabase } from '../lib/supabase'
 
 export default function MessageSection() {
   const { lang } = useLang()
@@ -24,6 +12,8 @@ export default function MessageSection() {
   const { ref, inView } = useInView()
   const [form, setForm] = useState({ name: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
 
   const fc = isTe ? 'font-telugu' : 'font-body'
 
@@ -31,16 +21,21 @@ export default function MessageSection() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const msg: WeddingMessage = {
-      id: Date.now().toString(),
-      name: form.name.trim(),
-      message: form.message.trim(),
-      timestamp: new Date().toISOString(),
+    setSending(true)
+    setErrorMsg('')
+
+    const { error } = await supabase
+      .from('wedding_messages')
+      .insert({ name: form.name.trim(), message: form.message.trim() })
+
+    setSending(false)
+    if (error) {
+      setErrorMsg(isTe ? 'సందేశం పంపడంలో సమస్య. మళ్ళీ ప్రయత్నించండి.' : 'Failed to send. Please try again.')
+    } else {
+      setSubmitted(true)
     }
-    saveMessage(msg)
-    setSubmitted(true)
   }
 
   const inputClass = `w-full bg-white/5 border rounded-lg px-4 py-3 text-white ${fc} placeholder:text-white/30 focus:outline-none focus:ring-2 focus:ring-gold/50 transition-all`
@@ -95,10 +90,12 @@ export default function MessageSection() {
                     className={`${inputClass} resize-none`} style={{ borderColor: 'rgba(212,175,55,0.2)' }} placeholder={t.messagePlaceholder} />
                 </div>
                 <motion.button type="submit" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                  className={`w-full py-3.5 md:py-4 rounded-full ${isTe ? 'font-telugu font-semibold' : 'font-display'} text-sm tracking-wider transition-shadow`}
+                  disabled={sending}
+                  className={`w-full py-3.5 md:py-4 rounded-full ${isTe ? 'font-telugu font-semibold' : 'font-display'} text-sm tracking-wider transition-shadow disabled:opacity-60`}
                   style={{ background: 'linear-gradient(135deg, #D4AF37, #F0D060, #D4AF37)', color: '#550000', boxShadow: '0 4px 20px rgba(212,175,55,0.3)' }}>
-                  {t.submit}
+                  {sending ? (isTe ? 'పంపుతోంది...' : 'Sending...') : t.submit}
                 </motion.button>
+                {errorMsg && <p className="text-red-400 text-xs text-center mt-2 font-body">{errorMsg}</p>}
               </motion.form>
             )}
           </AnimatePresence>
