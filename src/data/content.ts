@@ -1,0 +1,208 @@
+export type Lang = 'te' | 'en'
+
+export const content = {
+  curtain: {
+    te: {
+      blessing: 'శ్రీ గణేశాయ నమః',
+      invited: 'శుభలేఖ',
+      subtitle: 'శుభ వివాహ వేడుకకు',
+      couple: 'త్రయ & భరత్',
+      button: 'ఆహ్వానం చూడండి',
+    },
+    en: {
+      blessing: 'Sri Ganeshaya Namaha',
+      invited: "You're Invited",
+      subtitle: 'To the Auspicious Wedding of',
+      couple: 'Thraya & Bharath',
+      button: 'Open Invitation',
+    },
+  },
+  hero: {
+    te: {
+      blessing: 'ॐ శ్రీ మహా గణాధిపతయే నమః',
+      families: 'ఇరు కుటుంబాల సంతోషంతో',
+      tagline: 'ఏడడుగుల బంధం, జీవితకాలపు నేస్తం',
+      ceremony: 'శుభ వివాహం',
+    },
+    en: {
+      blessing: 'Om Sri Maha Ganadhipataye Namaha',
+      families: 'Together with their families',
+      tagline: 'Two Hearts, One Beautiful Journey',
+      ceremony: 'Wedding Ceremony',
+    },
+  },
+  couple: {
+    te: {
+      label: 'వధూవరులు',
+      title: 'వధూవరుల పరిచయం',
+      groom: 'భరత్ రెడ్డి',
+      groomParentsLabel: 'తల్లిదండ్రులు',
+      groomParents: 'శ్రీ రాజేష్ శర్మ & శ్రీమతి సునీత శర్మ',
+      groomCity: 'న్యూ ఢిల్లీ',
+      bride: 'త్రయ రెడ్డి',
+      brideParentsLabel: 'తల్లిదండ్రులు',
+      brideParents: 'శ్రీ విక్రం కపూర్ & శ్రీమతి ప్రియా కపూర్',
+      brideCity: 'ముంబై',
+    },
+    en: {
+      label: 'The Couple',
+      title: 'Bride & Groom',
+      groom: 'Bharath Reddy',
+      groomParentsLabel: 'Son of',
+      groomParents: 'Mr. Samara Simha Reddy(Late)      & Mrs. Haritha',
+      groomCity: 'Kurnool',
+      bride: 'Thraya Reddy',
+      brideParentsLabel: 'Daughter of',
+      brideParents: 'Mr. Vikram Kapoor & Mrs. Priya Kapoor',
+      brideCity: 'Mumbai',
+    },
+  },
+  story: {
+    te: {
+      label: 'మా కథ',
+      title: 'మా ప్రయాణం',
+      events: [
+        { year: '2022', title: 'తొలి పరిచయం', desc: 'ఒక మంచి రోజున ఇద్దరం తొలిసారి కలుసుకున్నాం.' },
+        { year: '2024', title: 'నిశ్చితార్థం', desc: 'పెద్దల ఆశీర్వాదంతో పెళ్ళి నిశ్చయమైంది.' },
+        { year: '2026', title: 'పెళ్ళి', desc: 'ఏడడుగులు కలిసి నడిచే శుభ ఘడియ వచ్చేసింది.' },
+      ],
+    },
+    en: {
+      label: 'Our Story',
+      title: 'A Love Story',
+      events: [
+        { year: '2022', title: 'First Meeting', desc: 'Two hearts met on a beautiful evening that changed everything.' },
+        { year: '2024', title: 'Engagement', desc: 'With blessings of both families, the union was sealed.' },
+        { year: '2026', title: 'Wedding', desc: 'Beginning a lifetime journey of love, together forever.' },
+      ],
+    },
+  },
+  weddingEvents: {
+    te: {
+      label: 'వేడుకలు',
+      title: 'శుభ కార్యక్రమాలు',
+      events: [
+        { icon: '🌼', title: 'పెళ్ళికూతురు / హల్దీ', date: 'జూలై 16, 2026', time: 'ఉ. 10:00', venue: 'ఇంట్లో వేడుక' },
+        { icon: '🌿', title: 'మెహందీ', date: 'జూలై 16, 2026', time: 'సా. 4:00', venue: 'ఇంట్లో వేడుక' },
+        { icon: '🎶', title: 'సంగీత్', date: 'జూలై 17, 2026', time: 'రా. 7:00', venue: 'రాయల్ ఇంపీరియల్ బాల్‌రూమ్' },
+        { icon: '🔥', title: 'ముహూర్తం (వివాహం)', date: 'జూలై 18, 2026', time: 'సా. 5:00', venue: 'రాయల్ ఇంపీరియల్ బాల్‌రూమ్' },
+        { icon: '✨', title: 'రిసెప్షన్', date: 'జూలై 18, 2026', time: 'రా. 8:00', venue: 'రాయల్ ఇంపీరియల్ బాల్‌రూమ్' },
+      ],
+    },
+    en: {
+      label: 'Celebrations',
+      title: 'Wedding Events',
+      events: [
+        { icon: '🌼', title: 'Pellikuthuru / Haldi', date: 'July 16, 2026', time: '10:00 AM', venue: 'Home Ceremony' },
+        { icon: '🌿', title: 'Mehendi', date: 'July 16, 2026', time: '4:00 PM', venue: 'Home Ceremony' },
+        { icon: '🎶', title: 'Sangeet', date: 'July 17, 2026', time: '7:00 PM', venue: 'The Royal Imperial Ballroom' },
+        { icon: '🔥', title: 'Muhurtham (Wedding)', date: 'April 26, 2026', time: '5:00 PM', venue: 'The Royal Imperial Ballroom' },
+        { icon: '✨', title: 'Reception', date: 'April 28, 2026', time: '8:00 PM', venue: 'The Royal Imperial Ballroom' },
+      ],
+    },
+  },
+  venue: {
+    te: {
+      label: 'వేదిక',
+      title: 'ముహూర్త స్థలం',
+      name: 'ది రాయల్ ఇంపీరియల్ బాల్‌రూమ్',
+      address: '123 ప్యాలెస్ రోడ్, కనాట్ ప్లేస్',
+      city: 'న్యూ ఢిల్లీ — 110001',
+      mapBtn: 'మ్యాప్‌లో చూడండి',
+    },
+    en: {
+      label: 'Venue',
+      title: 'Wedding Venue',
+      name: 'The Royal Imperial Ballroom',
+      address: '123 Palace Road, Connaught Place',
+      city: 'New Delhi — 110001',
+      mapBtn: 'View on Map',
+    },
+  },
+  countdown: {
+    te: {
+      label: 'ఎదురుచూస్తున్నాం...',
+      title: 'శుభ ముహూర్తానికి',
+      days: 'రోజులు',
+      hours: 'గంటలు',
+      minutes: 'నిమిషాలు',
+      seconds: 'సెకన్లు',
+    },
+    en: {
+      label: 'Counting Down...',
+      title: 'Until the Auspicious Day',
+      days: 'Days',
+      hours: 'Hours',
+      minutes: 'Minutes',
+      seconds: 'Seconds',
+    },
+  },
+  gallery: {
+    te: { label: 'చిత్రాలు', title: 'మా జ్ఞాపకాలు' },
+    en: { label: 'Memories', title: 'Our Gallery' },
+  },
+  message: {
+    te: {
+      label: 'మీ ఆశీర్వాదం',
+      title: 'త్రయకు మీ ఆశీర్వచనం',
+      subtitle: 'మీ ఆశీర్వాదమే మాకు పెద్ద వరం',
+      name: 'మీ పేరు *',
+      namePlaceholder: 'పూర్తి పేరు నమోదు చేయండి',
+      message: 'మీ సందేశం *',
+      messagePlaceholder: 'త్రయకు మీ శుభాకాంక్షలు రాయండి...',
+      submit: 'సందేశం పంపండి',
+      thankYou: 'ధన్యవాదాలు! 🙏',
+      thankYouMsg: 'మీ ఆశీర్వాదం అందుకున్నాం. చాలా కృతజ్ఞతలు!',
+      another: 'మరొక సందేశం పంపండి',
+    },
+    en: {
+      label: 'Your Blessings',
+      title: 'Send a Message for Thraya',
+      subtitle: 'Your heartfelt blessings mean the world to us',
+      name: 'Your Name *',
+      namePlaceholder: 'Enter your full name',
+      message: 'Your Message *',
+      messagePlaceholder: 'Write your blessings and wishes for Thraya...',
+      submit: 'Send Message',
+      thankYou: 'Thank You! 🙏',
+      thankYouMsg: 'Your message will be delivered to Thraya. We appreciate your love and blessings!',
+      another: 'Send Another Message',
+    },
+  },
+  closing: {
+    te: {
+      quote: '"ప్రేమ ఉన్నచోట జీవితం ఉంటుంది"',
+      author: '— మహాత్మా గాంధీ',
+      message1: 'ఈ శుభ సందర్భంలో మీ ఆశీర్వాదం మాకు చాలా విలువైనది.',
+      message2: 'మీ కుటుంబ సమేతంగా మా పెళ్ళికి తప్పక రావలసినదిగా ఆహ్వానిస్తున్నాం.',
+      groomFamily: 'వరుడి కుటుంబం',
+      brideFamily: 'వధువు కుటుంబం',
+      withLove: 'ప్రేమతో',
+    },
+    en: {
+      quote: '"Where there is love, there is life."',
+      author: '— Mahatma Gandhi',
+      message1: 'Your gracious presence and blessings on this auspicious occasion would be the greatest gift.',
+      message2: 'We invite you and your family to our wedding celebrations.',
+      brideFamily: "Bride's Family",
+      groomFamily: "Groom's Family",
+      withLove: 'With Love',
+    },
+  },
+  footer: {
+    te: {
+      made: '❤ తో — త్రయ & భరత్',
+      hashtag: '#త్రయభరత్వివాహం',
+      date: 'శుభ వివాహం • జూలై 18, 2026',
+    },
+    en: {
+      made: 'Made with ❤ — Thraya & Bharath',
+      hashtag: '#ThrayaWedsBharath',
+      date: 'Shubh Vivaaham • April 26, 2026',
+    },
+  },
+  langToggle: {
+    te: 'EN',
+    en: 'తె',
+  },
+} as const

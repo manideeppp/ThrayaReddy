@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+  body {
+    font-family: 'Poppins', 'Noto Sans Telugu', sans-serif;
+    color: #2C2C2C;
+    background: #FFF8E7;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.2);
+  }
+  .glass-card-dark {
+    background: rgba(128, 0, 0, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  }
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #D4AF37 0%, #F0D060 40%, #D4AF37 60%, #B8962E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gold-shimmer {
+    background: linear-gradient(90deg, #D4AF37 0%, #F0D060 25%, #D4AF37 50%, #F0D060 75%, #D4AF37 100%);
+    background-size: 500px 100%;
+    animation: shimmer 3s infinite linear;
+  }
+  .silk-texture {
+    background-image: 
+      repeating-linear-gradient(45deg, transparent 0px, transparent 2px, rgba(212,175,55,0.02) 2px, rgba(212,175,55,0.02) 4px),
+      repeating-linear-gradient(-45deg, transparent 0px, transparent 2px, rgba(212,175,55,0.02) 2px, rgba(212,175,55,0.02) 4px);
+  }
+
+  /* Toranam (mango leaf) border */
+  .toranam-border {
+    position: relative;
+  }
+  .toranam-border::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background:
+      radial-gradient(ellipse 18px 14px at 18px 0px, transparent 13px, #0B5D3B 13.5px, #0B5D3B 14px, transparent 14.5px) 0 0 / 36px 14px repeat-x;
+    opacity: 0.65;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+  }
+
+  /* Rangoli pattern overlay */
+  .rangoli-bg {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(212,175,55,0.03) 0%, transparent 40%),
+      radial-gradient(circle at 75% 75%, rgba(212,175,55,0.03) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(128,0,0,0.02) 0%, transparent 50%);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFF8E7; }
+::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,0.6); }
