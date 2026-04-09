@@ -29,7 +29,7 @@ export default function HeroSection() {
         />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.5) 100%)',
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 20%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.65) 100%)',
         }} />
       </div>
 
@@ -42,57 +42,57 @@ export default function HeroSection() {
       <motion.div variants={stagger} initial="hidden" animate="visible" className="text-center z-10 max-w-3xl mx-auto px-6 py-20">
         {/* Ganesh blessing */}
         <motion.p variants={fadeUp} className={`${isTe ? 'font-telugu text-base md:text-lg' : 'font-body text-sm md:text-base'} mb-3`}
-          style={{ color: '#F0D060', textShadow: '0 1px 8px rgba(0,0,0,0.4)' }}>
+          style={{ color: '#F0D060', textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.3)' }}>
           {t.blessing}
         </motion.p>
 
         {/* Diya pair */}
         <motion.div variants={fadeUp} className="flex items-center justify-center gap-4 mb-4">
           <span className="text-2xl animate-diya-flicker">🪔</span>
-          <span className="text-xl" style={{ color: '#F0D060' }}>⟡</span>
+          <span className="text-xl" style={{ color: '#D4AF37' }}>⟡</span>
           <span className="text-2xl animate-diya-flicker" style={{ animationDelay: '0.5s' }}>🪔</span>
         </motion.div>
 
-        <motion.p variants={fadeUp} className={`${isTe ? 'font-telugu text-base md:text-lg' : 'font-body text-base md:text-lg'} mb-5`}
-          style={{ color: '#FFFFFF', textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+        <motion.p variants={fadeUp} className={`${isTe ? 'font-telugu text-base md:text-lg' : 'font-body text-base md:text-lg font-medium'} mb-5`}
+          style={{ color: '#FFFFFF', textShadow: '0 2px 12px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.3)' }}>
           {t.families}
         </motion.p>
 
         <motion.h1 variants={fadeUp} className="leading-tight mb-4 px-2 overflow-visible">
           <span className={`block ${isTe ? 'font-telugu text-4xl sm:text-5xl md:text-6xl font-bold' : 'font-display text-5xl sm:text-6xl md:text-8xl'}`}
-            style={{ color: '#F0D060', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+            style={{ color: '#FFFFFF', textShadow: '0 3px 25px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.4)' }}>
             {isTe ? 'త్రయ' : 'Thraya'}
           </span>
-          <span className="block font-script text-2xl md:text-4xl my-2 md:my-3" style={{ color: '#F0D060', textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}>&amp;</span>
+          <span className="block font-script text-2xl md:text-4xl my-2 md:my-3" style={{ color: '#D4AF37', textShadow: '0 2px 15px rgba(0,0,0,0.6)' }}>&amp;</span>
           <span className={`block ${isTe ? 'font-telugu text-4xl sm:text-5xl md:text-6xl font-bold' : 'font-display text-5xl sm:text-6xl md:text-8xl'}`}
-            style={{ color: '#F0D060', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
+            style={{ color: '#FFFFFF', textShadow: '0 3px 25px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.4)' }}>
             {isTe ? 'భరత్' : 'Bharath'}
           </span>
         </motion.h1>
 
         {/* Temple bell divider */}
         <motion.div variants={fadeUp} className="flex items-center justify-center gap-3 my-6 md:my-8">
-          <div className="h-px w-12 md:w-20" style={{ background: 'linear-gradient(90deg, transparent, #F0D060)' }} />
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="#F0D060" opacity="0.8">
-            <path d="M12 2C8.5 2 6 5 6 9c0 3-2 4-2 6h16c0-2-2-3-2-6 0-4-2.5-7-6-7zM10 17h4c0 1.1-.9 2-2 2s-2-.9-2-2z"/>
+          <div className="h-px w-12 md:w-20" style={{ background: 'linear-gradient(90deg, transparent, #D4AF37)' }} />
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#D4AF37" opacity="0.8">
+            <path d="M12 2C8.5 2 6 5 6 9c0 3-2 4-2 6h16c0-2-2-2-3-2-6 0-4-2.5-7-6-7zM10 17h4c0 1.1-.9 2-2 2s-2-.9-2-2z"/>
           </svg>
-          <div className="h-px w-12 md:w-20" style={{ background: 'linear-gradient(90deg, #F0D060, transparent)' }} />
+          <div className="h-px w-12 md:w-20" style={{ background: 'linear-gradient(90deg, #D4AF37, transparent)' }} />
         </motion.div>
 
         <motion.p variants={fadeUp} className={`${isTe ? 'font-telugu text-lg md:text-2xl' : 'font-heading text-lg md:text-2xl italic'} mb-5 max-w-xl mx-auto leading-relaxed px-4`}
-          style={{ color: '#FFFFFF', textShadow: '0 1px 10px rgba(0,0,0,0.5)' }}>
+          style={{ color: '#F0D060', textShadow: '0 2px 15px rgba(0,0,0,0.7), 0 0 30px rgba(0,0,0,0.3)' }}>
           {t.tagline}
         </motion.p>
 
-        <motion.p variants={fadeUp} className={`${isTe ? 'font-telugu text-xs md:text-sm' : 'font-body text-[10px] md:text-xs uppercase tracking-[5px]'}`}
-          style={{ color: 'rgba(240,208,96,0.8)', textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
+        <motion.p variants={fadeUp} className={`${isTe ? 'font-telugu text-lg md:text-2xl' : 'font-display text-xl sm:text-2xl md:text-4xl uppercase tracking-[6px] md:tracking-[10px]'}`}
+          style={{ color: '#F0D060', textShadow: '0 2px 15px rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.3)' }}>
           {t.ceremony}
         </motion.p>
       </motion.div>
 
       {/* Scroll indicator */}
       <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2.5, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center" style={{ color: '#F0D060' }}>
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center" style={{ color: '#FFFFFF' }}>
         <div className="text-lg opacity-60">↓</div>
       </motion.div>
     </section>

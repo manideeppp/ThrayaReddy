@@ -12,7 +12,7 @@ export const content = {
     en: {
       blessing: 'Sri Ganeshaya Namaha',
       invited: "You're Invited",
-      subtitle: 'To Celebrate the Engagement of',
+      subtitle: 'To Celebrate the Marriage Ceremony of',
       couple: 'Thraya & Bharath',
       button: 'Open Invitation',
     },
@@ -47,14 +47,14 @@ export const content = {
     en: {
       label: 'The Couple',
       title: 'Bride & Groom',
-      groom: 'Bharath Reddy',
+      groom: 'Bharath Simha Reddy',
       groomParentsLabel: 'Son of',
-      groomParents: 'Mr. Samara Simha Reddy(Late)      & Mrs. Haritha',
+      groomParents: 'Maram Haritha - Late Sri Samara Simha Reddy',
       groomCity: 'Kurnool',
       bride: 'Thraya Reddy',
       brideParentsLabel: 'Daughter of',
-      brideParents: 'Mr. Vikram Kapoor & Mrs. Priya Kapoor',
-      brideCity: 'Mumbai',
+      brideParents: 'Gowreddy Rama Devi - Maheswar Reddy',
+      brideCity: 'Thippaipally, Wanaparthy',
     },
   },
   story: {
@@ -82,7 +82,7 @@ export const content = {
       label: 'వేడుకలు',
       title: 'శుభ కార్యక్రమాలు',
       events: [
-        { icon: '🌼', title: 'హల్దీ', date: 'ఏప్రిల్ 24, 2026', time: 'ఉ. 10:30 (పింక్ దుస్తులు)', venue: 'ఇంట్లో వేడుక' },
+        { icon: '🌼', title: 'హల్దీ', date: 'ఏప్రిల్ 24, 2026', time: 'ఉ. 10:30 (పింక్ దుస్తులు)', venue: 'ఇంట్లో వేడుక', specialRequest: 'త్రయ కోసం: మన ప్రత్యేక రోజులో నిమిరిన గులాబీ రంగులలో ధరించిన అందాన్ని చూడటానికి మేము చాలా ఆసక్తిగా ఉన్నాము.' },
         { icon: '🌿', title: 'మెహందీ & సంగీత్', date: 'ఏప్రిల్ 24, 2026', time: 'సా. 5:00 నుండి', venue: 'ఇంట్లో వేడుక' },
         { icon: '💐', title: 'పెళ్ళికూతురు', date: 'ఏప్రిల్ 25, 2026', time: 'ఉ. 11:30 నుండి', venue: 'ఇంట్లో వేడుక' },
         { icon: '🔥', title: 'సుముహూర్తం', date: 'ఏప్రిల్ 26, 2026', time: '', venue: '' },
@@ -93,11 +93,11 @@ export const content = {
       label: 'Celebrations',
       title: 'Wedding Events',
       events: [
-        { icon: '🌼', title: 'Haldi', date: 'April 24, 2026', time: '10:30 AM (Pink Outfit)', venue: 'Home Ceremony' },
+        { icon: '🌼', title: 'Haldi', date: 'April 24, 2026', time: '10:30 AM', venue: 'Home Ceremony', specialRequest: 'Special 𝚛̶𝚎̶𝚚̶𝚞̶𝚎̶𝚜̶𝚝̶ (ORDER) from Thraya:\nI would love to see you in beautiful shades of pink to celebrate our special day' },
         { icon: '🌿', title: 'Mehendi & Sangeet', date: 'April 24, 2026', time: '5:00 PM Onwards', venue: 'Home Ceremony' },
         { icon: '💐', title: 'Pellikuthuru', date: 'April 25, 2026', time: '11:30 AM Onwards', venue: 'Home Ceremony' },
-        { icon: '🔥', title: 'Sumuhurtham', date: 'April 26, 2026', time: '', venue: '' },
-        { icon: '✨', title: 'Reception', date: 'April 28, 2026', time: '', venue: '' },
+        { icon: '🔥', title: 'Sumuhurtham', date: 'April 26, 2026', time: '9:48 AM', venue: 'JVR Convention Hall, Wanaparthy' },
+        { icon: '✨', title: 'Reception', date: 'April 28, 2026', time: '11:00 AM', venue: 'National Crown Palace, Kurnool' },
       ],
     },
   },
@@ -105,19 +105,21 @@ export const content = {
     te: {
       label: 'వేదిక',
       title: 'ముహూర్త స్థలం',
-      name: 'ది రాయల్ ఇంపీరియల్ బాల్‌రూమ్',
-      address: '123 ప్యాలెస్ రోడ్, కనాట్ ప్లేస్',
-      city: 'న్యూ ఢిల్లీ — 110001',
+      name: 'J.V.R. కన్వెన్షన్ హాల్',
+      address: 'RBVR స్కూల్ సమీపంలో, విలియంకొండ గ్రామం',
+      city: 'కొత్తకోట మండలం, వనపర్తి జిల్లా, తెలంగాణ — 509104',
       mapBtn: 'మ్యాప్‌లో చూడండి',
+      mapLink: 'https://www.google.com/maps?daddr=7XP4%2BJ5W,+Ullamkonda,+Telangana+509104',
     },
     en: {
-      label: 'Venue',
-      title: 'Wedding Venue',
-      name: 'The Royal Imperial Ballroom',
-      address: '123 Palace Road, Connaught Place',
-      city: 'New Delhi — 110001',
-      mapBtn: 'View on Map',
-    },
+  label: 'Venue',
+  title: 'Wedding Venue',
+  name: 'J.V.R. Convention Hall',
+  address: 'Near RBVR School, Williamkonda Village',
+  city: 'Kothakota Mandal, Wanaparthy District, Telangana — 509104',
+  mapBtn: 'View on Map',
+  mapLink: 'https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRg8MgYIAhBFGDwyBggDEEUYPNIBCDEyMzdqMGo3qAIAsAIA&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=Kcdz9UUnA8o7MURmK12B9tVX&daddr=7XP4%2BJ5W,+Ullamkonda,+Telangana+509104'
+}
   },
   countdown: {
     te: {
@@ -130,7 +132,7 @@ export const content = {
     },
     en: {
       label: 'Counting Down...',
-      title: 'Until the Auspicious Day',
+      title: 'Until the D-Day',
       days: 'Days',
       hours: 'Hours',
       minutes: 'Minutes',
@@ -196,9 +198,9 @@ export const content = {
       date: 'శుభ వివాహం • జూలై 18, 2026',
     },
     en: {
-      made: 'Made with ❤ — Thraya & Bharath',
-      hashtag: '#ThrayaWedsBharath',
-      date: 'Shubh Vivaaham • April 26, 2026',
+      hashtag: '#ThrayaToBeBharaths',
+      date: 'Sumuhurtham • April 26, 2026',
+      made: 'Made with ❤ for Thraya Akka • By Manideep',
     },
   },
   langToggle: {

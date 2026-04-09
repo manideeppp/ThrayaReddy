@@ -14,7 +14,7 @@ export default function CountdownSection() {
 
   useEffect(() => {
     const calc = () => {
-      const diff = new Date('2026-07-18T17:00:00+05:30').getTime() - Date.now()
+      const diff = new Date('2026-04-26T00:00:00+05:30').getTime() - Date.now()
       if (diff > 0) {
         setTime({
           days: Math.floor(diff / 86400000),
@@ -30,7 +30,7 @@ export default function CountdownSection() {
   }, [])
 
   const blocks = [
-    { n: time.days, label: t.days, pad: 3 },
+    { n: time.days, label: t.days, pad: 2 },
     { n: time.hours, label: t.hours, pad: 2 },
     { n: time.minutes, label: t.minutes, pad: 2 },
     { n: time.seconds, label: t.seconds, pad: 2 },

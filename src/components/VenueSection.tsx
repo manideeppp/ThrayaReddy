@@ -27,15 +27,15 @@ export default function VenueSection() {
 
         <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.15 }}
           className="glass-card-dark rounded-2xl md:rounded-3xl overflow-hidden">
-          {/* Map */}
-          <div className="w-full h-56 md:h-72 relative" style={{ background: '#0a4a30' }}>
+          {/* Embedded Map — scrollable & interactive */}
+          <div className="w-full h-64 sm:h-72 md:h-96 relative">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.8574!2d77.2195!3d28.6315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDM3JzUzLjQiTiA3N8KwMTMnMTAuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
-              className="w-full h-full border-0 opacity-80"
-              allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=77.945%2C16.28%2C77.965%2C16.295&layer=mapnik&marker=16.286563%2C77.955438"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
               title="Wedding Venue Map"
             />
-            <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: 'inset 0 -30px 30px rgba(8,74,47,0.6)' }} />
           </div>
 
           {/* Venue Details */}
@@ -45,7 +45,7 @@ export default function VenueSection() {
             <p className={`${isTe ? 'font-telugu' : 'font-body'} text-white/70 text-sm mb-1`}>{t.address}</p>
             <p className={`${isTe ? 'font-telugu' : 'font-body'} text-white/70 text-sm mb-6`}>{t.city}</p>
 
-            <a href="https://maps.google.com/?q=Connaught+Place+New+Delhi" target="_blank" rel="noopener noreferrer"
+            <a href={(t as any).mapLink || "https://www.google.com/maps?daddr=7XP4%2BJ5W,+Ullamkonda,+Telangana+509104"} target="_blank" rel="noopener noreferrer"
               className={`inline-flex items-center gap-2 px-8 py-3 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 ${isTe ? 'font-telugu' : 'font-display'}`}
               style={{ background: 'linear-gradient(135deg, #D4AF37, #F0D060, #D4AF37)', color: '#084A2F', boxShadow: '0 4px 20px rgba(212,175,55,0.3)' }}>
               📍 {t.mapBtn}

@@ -3,14 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { LangProvider, useLang } from './context/LangContext'
 import { content } from './data/content'
 import CurtainOverlay from './components/CurtainOverlay'
-import LanguageToggle from './components/LanguageToggle'
 import HeroSection from './components/HeroSection'
 import CoupleSection from './components/CoupleSection'
-import OurStorySection from './components/OurStorySection'
 import WeddingEventsSection from './components/WeddingEventsSection'
 import VenueSection from './components/VenueSection'
 import CountdownSection from './components/CountdownSection'
-import GallerySection from './components/GallerySection'
 import MessageSection from './components/MessageSection'
 import ClosingSection from './components/ClosingSection'
 import MusicToggle from './components/MusicToggle'
@@ -31,8 +28,7 @@ function AppInner() {
         )}
       </AnimatePresence>
 
-      {/* Language toggle always visible */}
-      <LanguageToggle />
+
 
       {opened && (
         <>
@@ -47,15 +43,11 @@ function AppInner() {
             <SectionBreak />
             <CoupleSection />
             <SectionBreak />
-            <OurStorySection />
-            <SectionBreak />
             <WeddingEventsSection />
             <SectionBreak />
             <CountdownSection />
             <SectionBreak />
             <VenueSection />
-            <SectionBreak />
-            <GallerySection />
             <SectionBreak />
             <MessageSection />
             <SectionBreak />
@@ -74,9 +66,9 @@ function AppInner() {
                     <path d="M0 5 Q7.5 0 15 5 Q22.5 10 30 5 Q37.5 0 45 5 Q52.5 10 60 5" fill="none" stroke="#D4AF37" strokeWidth="1"/>
                   </svg>
                 </div>
-                <p className={`${lang === 'te' ? 'font-telugu' : 'font-body'} text-ivory/70 text-sm md:text-base`}>{ft.made}</p>
-                <p className={`${lang === 'te' ? 'font-telugu text-xs' : 'font-body text-xs tracking-widest uppercase'} mt-2`} style={{ color: '#D4AF37', opacity: 0.6 }}>{ft.hashtag}</p>
+                <p className={`${lang === 'te' ? 'font-telugu text-lg font-bold' : 'text-lg md:text-xl tracking-wider font-bold'}`} style={{ color: '#F0D060', textShadow: '0 0 20px rgba(240,208,96,0.5), 0 2px 10px rgba(212,175,55,0.8)', textTransform: 'none', fontFamily: 'Playfair Display, Georgia, serif' }}>{ft.hashtag}</p>
                 <p className={`${lang === 'te' ? 'font-telugu' : 'font-body'} text-ivory/40 text-xs mt-3`}>{ft.date}</p>
+                <p className={`${lang === 'te' ? 'font-telugu' : 'font-body'} text-ivory/70 text-sm md:text-base mt-4`}>{ft.made}</p>
               </div>
             </footer>
           </motion.main>

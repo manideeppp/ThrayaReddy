@@ -39,11 +39,6 @@ export default function CurtainOverlay({ onOpen }: Props) {
         <div className="absolute inset-0 opacity-20" style={{
           background: 'repeating-linear-gradient(90deg, transparent 0px, transparent 30px, rgba(255,255,255,0.02) 31px, rgba(0,0,0,0.04) 33px, transparent 35px, transparent 70px)',
         }} />
-        {/* Gold zari border on inner edge */}
-        <div className="absolute top-0 right-0 w-px h-full" style={{
-          background: 'linear-gradient(180deg, #D4AF37 0%, #B8962E 50%, #D4AF37 100%)',
-          opacity: 0.6,
-        }} />
       </motion.div>
 
       {/* Right Curtain */}
@@ -63,14 +58,9 @@ export default function CurtainOverlay({ onOpen }: Props) {
         }} />
         <div className="absolute top-0 left-0 w-px h-full" style={{
           background: 'linear-gradient(180deg, #D4AF37 0%, #B8962E 50%, #D4AF37 100%)',
-          opacity: 0.6,
+          opacity: 0,
         }} />
       </motion.div>
-
-      {/* Center vertical gold line (behind content) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full z-[15]" style={{
-        background: 'linear-gradient(180deg, rgba(212,175,55,0.4) 0%, rgba(212,175,55,0.15) 35%, rgba(212,175,55,0.15) 65%, rgba(212,175,55,0.4) 100%)',
-      }} />
 
       {/* Center Content */}
       <motion.div
