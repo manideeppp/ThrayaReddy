@@ -6,7 +6,6 @@ import { useInView } from '../hooks/useInView'
 export default function ClosingSection() {
   const { lang } = useLang()
   const t = content.closing[lang]
-  const ct = content.couple[lang]
   const isTe = lang === 'te'
   const { ref, inView } = useInView()
 
