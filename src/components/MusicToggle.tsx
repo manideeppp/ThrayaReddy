@@ -1,29 +1,15 @@
-import { useRef, useEffect } from 'react'
+import { type RefObject } from 'react'
 import { motion } from 'framer-motion'
 import { useLang } from '../context/LangContext'
 
 interface Props {
   playing: boolean
+  audioRef: RefObject<HTMLAudioElement>
   onToggle: (v: boolean) => void
 }
 
-export default function MusicToggle({ playing, onToggle }: Props) {
+export default function MusicToggle({ playing, audioRef, onToggle }: Props) {
   const { lang } = useLang()
-  const audioRef = useRef<HTMLAudioElement>(null)
-  const hasAutoPlayed = useRef(false)
-
-  // Auto-play music when component mounts (curtains just opened)
-  useEffect(() => {
-    if (!hasAutoPlayed.current && audioRef.current) {
-      hasAutoPlayed.current = true
-      audioRef.current.play()
-        .then(() => onToggle(true))
-        .catch(() => {
-          // Browser blocked autoplay — user must tap play
-          onToggle(false)
-        })
-    }
-  }, [])
 
   const handleClick = () => {
     const audio = audioRef.current
@@ -34,9 +20,6 @@ export default function MusicToggle({ playing, onToggle }: Props) {
 
   return (
     <>
-      <audio ref={audioRef} loop preload="auto">
-        <source src="/music.mp3" type="audio/mpeg" />
-      </audio>
 
       <motion.button onClick={handleClick}
         initial={{ opacity: 0, scale: 0.8 }}

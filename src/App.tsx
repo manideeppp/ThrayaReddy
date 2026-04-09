@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { LangProvider, useLang } from './context/LangContext'
 import { content } from './data/content'
@@ -17,14 +17,29 @@ import SectionBreak from './components/SectionBreak'
 function AppInner() {
   const [opened, setOpened] = useState(false)
   const [musicPlaying, setMusicPlaying] = useState(false)
+  const audioRef = useRef<HTMLAudioElement>(null)
   const { lang } = useLang()
   const ft = content.footer[lang]
 
+  const handleCurtainOpen = () => {
+    setOpened(true)
+    // Play music directly inside user gesture (tap/click) so mobile browsers allow it
+    const audio = audioRef.current
+    if (audio) {
+      audio.play()
+        .then(() => setMusicPlaying(true))
+        .catch(() => setMusicPlaying(false))
+    }
+  }
+
   return (
     <div className="min-h-screen bg-ivory font-body overflow-x-hidden">
+      {/* Audio element lives at app level so it exists before curtain click */}
+      <audio ref={audioRef} src="/music.mp3" loop preload="auto" />
+
       <AnimatePresence mode="wait">
         {!opened && (
-          <CurtainOverlay key="curtain" onOpen={() => setOpened(true)} />
+          <CurtainOverlay key="curtain" onOpen={handleCurtainOpen} />
         )}
       </AnimatePresence>
 
@@ -33,7 +48,7 @@ function AppInner() {
       {opened && (
         <>
           <FlowerPetals />
-          <MusicToggle playing={musicPlaying} onToggle={(v: boolean) => setMusicPlaying(v)} />
+          <MusicToggle playing={musicPlaying} audioRef={audioRef} onToggle={(v: boolean) => setMusicPlaying(v)} />
           <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
