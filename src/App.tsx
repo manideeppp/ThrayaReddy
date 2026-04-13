@@ -11,6 +11,7 @@ import CountdownSection from './components/CountdownSection'
 import MessageSection from './components/MessageSection'
 import ClosingSection from './components/ClosingSection'
 import MusicToggle from './components/MusicToggle'
+import ScrollDownButton from './components/ScrollDownButton'
 import FlowerPetals from './components/FlowerPetals'
 import SectionBreak from './components/SectionBreak'
 
@@ -49,6 +50,7 @@ function AppInner() {
         <>
           <FlowerPetals />
           <MusicToggle playing={musicPlaying} audioRef={audioRef} onToggle={(v: boolean) => setMusicPlaying(v)} />
+          <ScrollDownButton />
           <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

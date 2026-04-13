@@ -90,23 +90,7 @@ export default function HeroSection() {
         </motion.p>
       </motion.div>
 
-      {/* Scroll indicator — mouse/capsule style */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2, duration: 1 }}
-        className="absolute bottom-5 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10 cursor-pointer"
-        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: 'smooth' })}
-      >
-        <div className="w-6 h-10 rounded-full border-2 flex justify-center pt-2" style={{ borderColor: 'rgba(212,175,55,0.6)' }}>
-          <motion.div
-            animate={{ y: [0, 10, 0], opacity: [1, 0.3, 1] }}
-            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ background: '#D4AF37' }}
-          />
-        </div>
-      </motion.div>
+
     </section>
   )
 }
