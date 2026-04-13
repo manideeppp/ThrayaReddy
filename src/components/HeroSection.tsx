@@ -91,9 +91,32 @@ export default function HeroSection() {
       </motion.div>
 
       {/* Scroll indicator */}
-      <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2.5, repeat: Infinity }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center" style={{ color: '#FFFFFF' }}>
-        <div className="text-lg opacity-60">↓</div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2.5, duration: 1 }}
+        className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10 cursor-pointer"
+        onClick={() => window.scrollBy({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
+      >
+        <p className="font-body text-[10px] md:text-xs tracking-[3px] uppercase" style={{ color: 'rgba(212,175,55,0.8)' }}>
+          Scroll Down
+        </p>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-80">
+            <path d="M7 10l5 5 5-5" />
+          </svg>
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut', delay: 0.15 }}
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 -mt-4">
+            <path d="M7 10l5 5 5-5" />
+          </svg>
+        </motion.div>
       </motion.div>
     </section>
   )
